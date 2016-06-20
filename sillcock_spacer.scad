@@ -32,16 +32,14 @@ facets = 32;
 
 module screw_hole() {
   hull() {
-    translate([screw_x_offset, 0, 0]) cylinder(d=screw_d, h=thickness, $fn=facets);
-    translate([screw_x_offset+screw_x_width, 0, 0]) cylinder(d=screw_d, h=thickness, $fn=facets);
+    translate([screw_x_offset, 0, -0.1]) cylinder(d=screw_d, h=thickness+0.2, $fn=facets);
+    translate([screw_x_offset+screw_x_width, 0, -0.1]) cylinder(d=screw_d, h=thickness+0.2, $fn=facets);
   }
 }
 
 difference() {
   scale([1,length/width,1]) cylinder(d=width, h=thickness, $fn=facets);
-  /*translate([0,0,-thickness])*/
-    /*cylinder(d1=pipe_diameter*0.8, d2=pipe_diameter*1.25, h=thickness);*/
-  cylinder(d1=pipe_diameter, d2=opening_taper_diameter, h=thickness, $fn=facets);
+  translate([0,0,-0.1]) cylinder(d1=pipe_diameter, d2=opening_taper_diameter, h=thickness+0.2, $fn=facets);
   screw_hole();
   mirror([1,0,0]) screw_hole();
 }
