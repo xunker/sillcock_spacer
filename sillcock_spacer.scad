@@ -1,3 +1,8 @@
+// Sillcock Spacer --  Version 1.0
+// (C) 2016 by Matthew Nielsen
+// Home page: https://github.com/xunker/sillcock_spacer
+// License: "Creative Commons -- Attribution -- Non-Commercial -- Share Alike"
+
 // Thickness of the spacer. The default of 12mm is about 1/2 inch.
 thickness = 12.0;
 
